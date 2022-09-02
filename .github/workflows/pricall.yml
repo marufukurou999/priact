@@ -1,0 +1,19 @@
+name: pricall
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: check out
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ secrets.GH_ACT_REPO }}
+        path: .
+        ref: ${{ secrets.GH_ACT_REF }}
+        token: ${{ secrets.GH_PAT }}
+    - uses: ./
