@@ -20,11 +20,8 @@ jobs:
 
       - name: generate
         run: |
-          pwd
-          ls -la
-          ls output
-          #git config user.name github-actions
-          #git config user.email github-actions@github.com
-          #git add output/.
-          #git commit -m "generated"
-          #git push
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add dist/output
+          git commit -m "generated"
+          git push
